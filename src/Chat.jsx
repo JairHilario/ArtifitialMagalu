@@ -87,10 +87,10 @@ function Chat() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center p-2 sm:p-4">
-      <div className="w-full max-w-2xl h-[90vh] sm:h-[80vh] bg-gradient-to-br from-slate-900 via-slate-950 to-purple-900 rounded-3xl shadow-2xl border border-white/10 flex flex-col">
+    <div className="fixed inset-0 bg-slate-950 flex items-center justify-center p-2 sm:p-4 overflow-hidden">
+      <div className="w-full max-w-2xl h-[100vh] sm:h-[90vh] bg-gradient-to-br from-slate-900 via-slate-950 to-purple-900 rounded-3xl shadow-2xl border border-white/10 flex flex-col">
         {/* Header */}
-        <div className="p-4 sm:p-6 border-b border-white/10 flex items-center gap-3">
+        <div className="p-4 sm:p-6 border-b border-white/10 flex items-center gap-3 flex-shrink-0">
           <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gradient-to-tr from-pink-500 to-purple-500 flex items-center justify-center text-xl">
             💜
           </div>
@@ -103,7 +103,7 @@ function Chat() {
         </div>
 
         {/* Messages */}
-        <div className="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4">
+        <div className="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
           {messages.map((msg, i) => (
             <div
               key={i}
@@ -131,7 +131,7 @@ function Chat() {
         </div>
 
         {/* Input */}
-        <div className="p-3 sm:p-4 border-t border-white/10">
+        <div className="p-3 sm:p-4 border-t border-white/10 flex-shrink-0">
           <form
             onSubmit={e => {
               e.preventDefault();
